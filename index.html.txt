@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paseo de Lipa | Smart Homes in Lipa City</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: auto;
+      background: #ffffff;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e7f5c, #2fa37c);
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .hero h1 { font-size: 24px; margin-bottom: 10px; }
+    .hero p { font-size: 15px; line-height: 1.4; }
+
+    .badge {
+      background: #ffd700;
+      color: #000;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .section { padding: 20px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .feature-box {
+      background: #f2f8f6;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .models {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .model-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .model-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .model-content { padding: 14px; }
+
+    .model-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .cta {
+      background: #1e7f5c;
+      color: white;
+      padding: 22px 20px;
+      text-align: center;
+    }
+
+    .cta h2 { margin-bottom: 10px; font-size: 22px; }
+
+    .trust {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      padding: 10px 20px 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 10px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="badge">SMART HOMES IN LIPA CITY</div>
+      <h1>Paseo de Lipa</h1>
+      <p>
+        Own a modern smart home with <b>FREE net-metered solar panels</b> and
+        <b>rainwater & freshwater harvesting system</b>.
+      </p>
+      <p>
+        Save up to <b>30% on electricity</b> and <b>35% on water bills</b>.
+      </p>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="section">
+      <h2>Why Choose Paseo de Lipa?</h2>
+      <div class="features">
+        <div class="feature-box">⚡ FREE Net-Metered Solar Panels</div>
+        <div class="feature-box">💧 Rainwater & Freshwater Harvesting</div>
+        <div class="feature-box">🏡 Modern Smart Home Design</div>
+        <div class="feature-box">📍 Prime Location in Lipa City</div>
+        <div class="feature-box">💰 Lower Monthly Utility Bills</div>
+        <div class="feature-box">🔒 Safe & Secure Community</div>
+      </div>
+    </div>
+
+    <!-- MODELS -->
+    <div class="section">
+      <h2>Available House Models</h2>
+      <div class="models">
+
+        <!-- LARISSA -->
+        <div class="model-card">
+          <img 
+            src="https://www.cbdi.com.ph/wp-content/uploads/2025/11/affordable-house-and-lot-for-sale-in-batangas-1.jpg" 
+            alt="Larissa Single Attached - Paseo de Lipa"
+            loading="lazy"
+          >
+          <div class="model-content">
+            <h3>Larissa – Single Attached</h3>
+            <p>🛏 4 Bedrooms</p>
+            <p>🚿 2 Toilet & Bath</p>
+            <p>📐 100 sqm Lot Area</p>
+            <p>🏠 90 sqm Floor Area</p>
+            <p>💧 Rainwater & Freshwater Harvesting Tank</p>
+            <p>⚡ Net-Metered Solar Panel System</p>
+          </div>
+        </div>
+
+        <!-- LEVANA -->
+        <div class="model-card">
+          <img 
+            src="https://www.cbdi.com.ph/wp-content/uploads/2025/11/affordable-house-and-lot-for-sale-in-batangas-8.jpg" 
+            alt="Levana Townhouse - Paseo de Lipa"
+            loading="lazy"
+          >
+          <div class="model-content">
+            <h3>Levana – Townhouse</h3>
+            <p>📐 Lot Area: 60 to 84 sqm</p>
+            <p>🏠 Floor Area: 61.70 to 62.80 sqm</p>
+            <p>🏢 Floors: 2</p>
+            <p>🛏 Bedrooms: 3</p>
+            <p>🚿 Toilet & Bath: 2</p>
+            <p>💧 Rainwater & Freshwater Harvesting Tank</p>
+            <p>⚡ Net-Metered Solar Panel System</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA WITH GOOGLE FORM -->
+    <div class="cta">
+      <h2>Get Full Details & Sample Computation</h2>
+      <p>Select your preferred house model and receive full details.</p>
+
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdGbqir-4rXGtewHN8oJBY82a4Dsf_RHQjglpsl04Z_Lvotqw/viewform?embedded=true" 
+        width="100%" 
+        height="560" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        style="border-radius: 10px; background: #fff;"
+      >
+        Loading…
+      </iframe>
+    </div>
+
+    <div class="trust">
+      We respect your privacy. Your information is safe and will only be used to contact you about Paseo de Lipa.
+    </div>
+
+    <footer>
+      © 2026 Paseo de Lipa | Smart Homes in Lipa City
+    </footer>
+
+  </div>
+</body>
+</html>
