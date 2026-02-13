@@ -1,211 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Paseo de Lipa | Smart Homes in Lipa City</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southwind at Southpeak | Limited Premium Homes</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-    }
+<!-- META PIXEL BASE CODE -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-    .container {
-      max-width: 520px;
-      margin: auto;
-      background: #ffffff;
-    }
+fbq('init', '1088170430110072');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+<!-- END META PIXEL -->
 
-    .hero {
-      background: linear-gradient(135deg, #1e7f5c, #2fa37c);
-      color: white;
-      padding: 28px 20px;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    .hero h1 { font-size: 24px; margin-bottom: 10px; }
-    .hero p { font-size: 15px; line-height: 1.4; }
-
-    .badge {
-      background: #ffd700;
-      color: #000;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .section { padding: 20px; }
-
-    .features {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .feature-box {
-      background: #f2f8f6;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
-    .models {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .model-card {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .model-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .model-content { padding: 14px; }
-
-    .model-card h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .cta {
-      background: #1e7f5c;
-      color: white;
-      padding: 22px 20px;
-      text-align: center;
-    }
-
-    .cta h2 { margin-bottom: 10px; font-size: 22px; }
-
-    .trust {
-      font-size: 12px;
-      color: #666;
-      text-align: center;
-      padding: 10px 20px 20px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      padding: 10px;
-      color: #777;
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0f1f1a;color:#f5f5f5;}
+section{padding:100px 8%;}
+.container{max-width:1200px;margin:auto;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.gold{color:#d4af37;}
+.btn{
+  background:#d4af37;color:#111;padding:16px 34px;
+  border-radius:40px;text-decoration:none;font-weight:600;
+}
+.hero{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+  url("https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02694%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Aerial%20perspective)%20(1).jpg?format=auto&width=1920&quality=75") center/cover no-repeat;
+  display:flex;align-items:center;text-align:center;
+}
+.hero-content{max-width:800px;margin:auto;}
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:40px;border-radius:20px;margin-top:40px;
+}
+.model-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:50px;align-items:center;
+}
+.model img{width:100%;border-radius:15px;}
+iframe{
+  width:100%;max-width:700px;height:1000px;
+  border:none;border-radius:20px;
+}
+.floating-btn{
+  position:fixed;bottom:25px;right:25px;
+  background:#d4af37;color:#111;
+  padding:14px 22px;border-radius:40px;
+  text-decoration:none;font-weight:600;
+}
+.badges{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;margin-top:40px;
+}
+@media(max-width:768px){
+  .model-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:34px;}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="badge">SMART HOMES IN LIPA CITY</div>
-      <h1>Paseo de Lipa</h1>
-      <p>
-        Own a modern smart home with <b>FREE net-metered solar panels</b> and
-        <b>rainwater & freshwater harvesting system</b>.
-      </p>
-      <p>
-        Save up to <b>30% on electricity</b> and <b>35% on water bills</b>.
-      </p>
-    </div>
+<a href="#inquire" class="floating-btn"
+onclick="fbq('track','Lead');">
+Inquire Now
+</a>
 
-    <!-- FEATURES -->
-    <div class="section">
-      <h2>Why Choose Paseo de Lipa?</h2>
-      <div class="features">
-        <div class="feature-box">⚡ FREE Net-Metered Solar Panels</div>
-        <div class="feature-box">💧 Rainwater & Freshwater Harvesting</div>
-        <div class="feature-box">🏡 Modern Smart Home Design</div>
-        <div class="feature-box">📍 Prime Location in Lipa City</div>
-        <div class="feature-box">💰 Lower Monthly Utility Bills</div>
-        <div class="feature-box">🔒 Safe & Secure Community</div>
-      </div>
-    </div>
-
-    <!-- MODELS -->
-    <div class="section">
-      <h2>Available House Models</h2>
-      <div class="models">
-
-        <!-- LARISSA -->
-        <div class="model-card">
-          <img 
-            src="https://www.cbdi.com.ph/wp-content/uploads/2025/11/affordable-house-and-lot-for-sale-in-batangas-1.jpg" 
-            alt="Larissa Single Attached - Paseo de Lipa"
-            loading="lazy"
-          >
-          <div class="model-content">
-            <h3>Larissa – Single Attached</h3>
-            <p>🛏 4 Bedrooms</p>
-            <p>🚿 2 Toilet & Bath</p>
-            <p>📐 100 sqm Lot Area</p>
-            <p>🏠 90 sqm Floor Area</p>
-            <p>💧 Rainwater & Freshwater Harvesting Tank</p>
-            <p>⚡ Net-Metered Solar Panel System</p>
-          </div>
-        </div>
-
-        <!-- LEVANA -->
-        <div class="model-card">
-          <img 
-            src="https://www.cbdi.com.ph/wp-content/uploads/2025/11/affordable-house-and-lot-for-sale-in-batangas-8.jpg" 
-            alt="Levana Townhouse - Paseo de Lipa"
-            loading="lazy"
-          >
-          <div class="model-content">
-            <h3>Levana – Townhouse</h3>
-            <p>📐 Lot Area: 60 to 84 sqm</p>
-            <p>🏠 Floor Area: 61.70 to 62.80 sqm</p>
-            <p>🏢 Floors: 2</p>
-            <p>🛏 Bedrooms: 3</p>
-            <p>🚿 Toilet & Bath: 2</p>
-            <p>💧 Rainwater & Freshwater Harvesting Tank</p>
-            <p>⚡ Net-Metered Solar Panel System</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CTA WITH GOOGLE FORM -->
-    <div class="cta">
-      <h2>Get Full Details & Sample Computation</h2>
-      <p>Select your preferred house model and receive full details.</p>
-
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdGbqir-4rXGtewHN8oJBY82a4Dsf_RHQjglpsl04Z_Lvotqw/viewform?embedded=true" 
-        width="100%" 
-        height="560" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        style="border-radius: 10px; background: #fff;"
-      >
-        Loading…
-      </iframe>
-    </div>
-
-    <div class="trust">
-      We respect your privacy. Your information is safe and will only be used to contact you about Paseo de Lipa.
-    </div>
-
-    <footer>
-      © 2026 Paseo de Lipa | Smart Homes in Lipa City
-    </footer>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Limited Premium Homes Near <span class="gold">Filinvest City</span></h1>
+    <p>Own a luxury home or prime residential lot at Southwind before inventory runs out.</p>
+    <br>
+    <a href="#inquire" class="btn"
+    onclick="fbq('track','Lead');">
+    Get Price List & Availability
+    </a>
   </div>
+</section>
+
+<!-- SCARCITY -->
+<section class="container">
+  <div class="card" style="border-left:5px solid #d4af37;">
+    <h2 class="gold">Limited Inventory</h2>
+    <p>Walnut and Banyan units are nearly sold out. Residential lots are being reserved quickly.</p>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="container">
+  <h2 class="gold">Why Investors Choose Southwind</h2>
+  <div class="badges">
+    <div class="card">Developed by Filinvest</div>
+    <div class="card">Prime Growth Location</div>
+    <div class="card">Gated Premium Community</div>
+    <div class="card">High Appreciation Potential</div>
+  </div>
+</section>
+
+<!-- CTA FORM -->
+<section id="inquire" class="container">
+  <h2 class="gold">Secure Your Slot Today</h2>
+  <br>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBaP-6NANaqWuX7s5gH6VTmuTM0Il7E6RgxPzzCewQgFmJGw/viewform?embedded=true"
+  onload="fbq('track','Lead');"></iframe>
+</section>
+
+<footer style="text-align:center;padding:40px;background:#000;">
+<p>© 2026 Southwind at Southpeak | Developed by Filinvest</p>
+<img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/aspire-ca6885890761476d6ad9b592d90eb1d4.jpg?format=auto&width=384&quality=75" width="140">
+</footer>
+
 </body>
 </html>
