@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium South Luzon Realtor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* Using your requested background link */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://share.google/cRpAQCuADk7oOlQ9F');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
     </style>
 </head>
@@ -19,21 +22,20 @@
 
     <section class="hero-bg h-screen flex items-center justify-center px-4">
         <div class="max-w-4xl w-full text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                Find Your Dream Space in <span class="text-blue-400">South Luzon</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
+                Elevate Your <span class="text-blue-400">Lifestyle</span>
             </h1>
-            <p class="text-lg text-gray-200 mb-10 max-w-2xl mx-auto">
-                Discover premium properties across Batangas, Laguna, and Cavite. 
-                Your journey home starts here.
+            <p class="text-xl text-gray-100 mb-10 font-light tracking-wide">
+                Exclusive properties in Batangas, Laguna, and Cavite.
             </p>
 
-            <div class="bg-white/20 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white/30">
-                <form class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white/10 backdrop-blur-xl p-6 rounded-3xl shadow-2xl border border-white/20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
                     <div class="flex flex-col text-left">
-                        <label class="text-xs font-semibold text-white uppercase ml-2 mb-1">Location</label>
-                        <select class="w-full p-3 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="">Select Location</option>
+                        <label class="text-xs font-bold text-blue-300 uppercase ml-2 mb-2 tracking-widest">Location</label>
+                        <select id="locationSelect" class="w-full p-4 rounded-2xl bg-white/90 text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50 appearance-none cursor-pointer">
+                            <option value="">Where to?</option>
                             <option value="batangas">Batangas</option>
                             <option value="laguna">Laguna</option>
                             <option value="cavite">Cavite</option>
@@ -41,8 +43,8 @@
                     </div>
 
                     <div class="flex flex-col text-left">
-                        <label class="text-xs font-semibold text-white uppercase ml-2 mb-1">Property Type</label>
-                        <select class="w-full p-3 rounded-xl bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <label class="text-xs font-bold text-blue-300 uppercase ml-2 mb-2 tracking-widest">Property Type</label>
+                        <select id="modelSelect" class="w-full p-4 rounded-2xl bg-white/90 text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50 appearance-none cursor-pointer">
                             <option value="">Select Model</option>
                             <option value="house-lot">House and Lot</option>
                             <option value="condo">Condominium</option>
@@ -52,15 +54,32 @@
                     </div>
 
                     <div class="flex items-end">
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 ease-in-out transform hover:scale-105">
-                            Search Properties
+                        <button onclick="handleSearch()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-blue-500/40">
+                            FIND PROPERTY
                         </button>
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function handleSearch() {
+            const location = document.getElementById('locationSelect').value;
+            const model = document.getElementById('modelSelect').value;
+
+            // Specific Redirect for Batangas + Condominium
+            if (location === 'batangas' && model === 'condo') {
+                window.location.href = "https://share.google/poDEOz3ZBHbw0gv9x";
+            } else if (location === '' || model === '') {
+                alert("Please select both a location and a property type.");
+            } else {
+                // Fallback for other combinations
+                alert(`Searching for ${model} in ${location}... (Link not set yet)`);
+            }
+        }
+    </script>
 
 </body>
 </html>
