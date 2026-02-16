@@ -1,22 +1,239 @@
-<section class="hero">
-    <div class="hero-content">
-        <h1>Welcome to Southwind</h1>
-        <p>Experience Modern Asian living with breathtaking views of Laguna de Bay. Your sanctuary in San Pedro starts here.</p>
-        <a href="#contact" class="btn-primary">Schedule a Viewing</a>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southwind | Premium Real Estate by parkres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS VARIABLES - THE SOUTHWIND PALETTE */
+        :root {
+            --primary-brown: #5d4037; /* Earthy Wood Tone */
+            --accent-gold: #c0a080;   /* Modern Asian Gold */
+            --dark-text: #2c3e50;
+            --light-bg: #f9f7f2;      /* Soft Cream Background */
+            --white: #ffffff;
+        }
 
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Connect with parkres</h2>
-        <p>Interested in a unit or a site tour? Let’s find your future home at Southwind.</p>
-        
-        <form class="contact-form">
-            <input type="text" placeholder="Your Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="tel" placeholder="Phone Number (e.g. 0917...)" required>
-            <textarea placeholder="Message / Preferred House Model (Banyan or Walnut)"></textarea>
-            <button type="submit" class="btn-submit">Send Inquiry</button>
-        </form>
-    </div>
-</section> 
+        /* GLOBAL STYLES */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* PROPERTY FEATURES */
+        .features {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-brown);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background-color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-brown);
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fafafa;
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-brown);
+            color: var(--white);
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #3e2723;
+            letter-spacing: 2px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 20px;
+            background-color: var(--light-bg);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* MOBILE FIXES */
+        @media (max-width: 600px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .features { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Southwind</h1>
+            <p>Experience the peak of Modern Asian living in San Pedro, Laguna. Refreshing views, premium comfort, and a sanctuary to call your own.</p>
+            <a href="#contact" class="btn-primary">Inquire Today</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Prime Accessibility</h3>
+            <p>Located near MCX, SLEX, and Daang Hari. Your gateway to Alabang and Makati is just minutes away.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Inspired Design</h3>
+            <p>Architectural excellence featuring the Banyan and Walnut models, designed for the modern family.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Nature & View</h3>
+            <p>Wake up to the cool breeze and a stunning panorama of Laguna de Bay and the surrounding mountains.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Connect with parkres</h2>
+            <p>Ready to see Southwind in person? Send an inquiry for site viewings and unit availability.</p>
+            
+            <form class="contact-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <textarea rows="4" placeholder="How can I help you? (Inquire about Banyan, Walnut, or Schedule a Tour)"></textarea>
+                <button type="submit" class="btn-submit">Request Information</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Southwind Real Estate | Managed by parkres</p>
+        <p>A Filinvest Land Inc. Development</p>
+    </footer>
+
+</body>
+</html>
