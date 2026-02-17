@@ -11,103 +11,80 @@
             --primary-brown: #5d4037;
             --accent-gold: #c0a080;
             --dark-text: #2c3e50;
-            --light-bg: #f9f7f2;
+            --light-earth: #f4f1ea; /* Light Earth Tone */
             --white: #ffffff;
-            --gray: #666;
+            --light-bg: #fdfcf9;
         }
 
         * { box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; color: var(--dark-text); background-color: var(--light-bg); line-height: 1.6; scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark-text);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- NEW HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/Group%20194%201%20(1).png?format=auto&width=3840&quality=100'); 
-            background-size: cover;
-            background-position: center;
-            height: 80vh; 
+            background-color: var(--light-earth);
+            padding: 80px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
+            min-height: 70vh;
+        }
+        .hero-container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-text { text-align: left; }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary-brown); margin: 0; line-height: 1.1; }
+        .hero-text p { font-size: 1.2rem; margin: 20px 0; color: var(--gray); }
+        .hero-image img { width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        @media (max-width: 968px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { order: 2; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-image { order: 1; }
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                            url('https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02694%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Aerial%20perspective)%20(1).jpg?format=auto&width=1920&quality=75');
-                height: 60vh;
-            }
-        }
-
-        /* --- AVP VIDEO SECTION --- */
-        .video-section { background-color: #000; padding: 0; text-align: center; }
-        .video-container { width: 100%; max-width: 100%; line-height: 0; }
-        video { width: 100%; height: auto; max-height: 90vh; }
-
-        .btn-primary {
-            background-color: var(--accent-gold);
-            color: var(--white);
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            display: inline-block;
-            text-transform: uppercase;
-            margin-top: 20px;
-        }
+        /* --- WHY BUY SECTION --- */
+        .features-section { padding: 80px 20px; background: var(--white); text-align: center; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto; }
+        .feature-item h4 { color: var(--primary-brown); text-transform: uppercase; margin-bottom: 10px; }
 
         /* --- PROPERTY MODELS --- */
         .models-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .models-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary-brown); margin-bottom: 50px; }
         .models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .model-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; }
-        .model-image { width: 100%; height: 250px; object-fit: cover; }
+        .model-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; }
+        .model-image { width: 100%; height: 260px; object-fit: cover; }
         .model-info { padding: 25px; flex-grow: 1; }
-        .house-type { font-weight: 600; color: var(--accent-gold); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+        .house-type { font-weight: 600; color: var(--accent-gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-        /* --- FLOOR PLAN ZOOM --- */
-        .floor-plans { display: flex; gap: 10px; margin-top: 10px; }
-        .floor-plans div { flex: 1; border: 1px solid #eee; cursor: zoom-in; overflow: hidden; background: #fff; transition: 0.3s; }
-        .floor-plans div:hover { border-color: var(--accent-gold); transform: scale(1.05); }
-        .floor-plans img { width: 100%; height: 60px; object-fit: contain; display: block; }
+        /* --- FLOOR PLANS & ZOOM --- */
+        .floor-plans { display: flex; gap: 8px; margin-top: 15px; }
+        .floor-plans div { flex: 1; border: 1px solid #eee; cursor: zoom-in; height: 70px; display: flex; align-items: center; background: #fff; }
+        .floor-plans img { width: 100%; height: 60px; object-fit: contain; }
 
         /* --- LIGHTBOX --- */
-        #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
-        #lightbox img { max-width: 90%; max-height: 80%; border: 5px solid white; background: white; }
+        #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        #lightbox img { max-width: 90%; max-height: 80%; border: 5px solid white; }
         #lightbox .close { position: absolute; top: 30px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
 
-        .specs-list { list-style: none; padding: 0; margin: 0; }
+        .specs-list { list-style: none; padding: 0; margin: 15px 0; }
         .specs-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
 
-        /* --- CONTACT & SUCCESS STATE --- */
-        .contact-section { background-color: var(--white); padding: 80px 20px; text-align: center; }
+        /* --- VIDEO & MAP --- */
+        .video-section { background-color: #000; line-height: 0; }
+        video { width: 100%; max-height: 80vh; }
+
+        /* --- CONTACT --- */
+        .contact-section { background-color: var(--light-earth); padding: 80px 20px; text-align: center; }
         .contact-container { max-width: 500px; margin: 0 auto; }
         .contact-form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-        .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; font-family: 'Montserrat'; width: 100%; }
+        .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
         .btn-submit { background-color: var(--primary-brown); color: var(--white); padding: 18px; border: none; font-weight: 600; cursor: pointer; text-transform: uppercase; }
         
-        #success-message { display: none; padding: 40px; border: 2px solid var(--accent-gold); background: var(--light-bg); border-radius: 8px; }
-        #success-message h3 { color: var(--primary-brown); margin-top: 0; }
+        #success-message { display: none; padding: 40px; background: white; border-radius: 10px; }
 
         footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #999; }
     </style>
@@ -120,36 +97,59 @@
     </div>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Southwind</h1>
-            <p>Modern Asian Living in San Pedro, Laguna</p>
-            <a href="#contact" class="btn-primary">Schedule a Viewing</a>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Elevated Living at Southwind</h1>
+                <p>Experience a refreshing micro-climate and breathtaking views in San Pedro, Laguna. Your gateway to the South starts here.</p>
+                <a href="#contact" class="btn-primary" style="background: var(--primary-brown); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block;">INQUIRE NOW</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02694%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Aerial%20perspective)%20(1).jpg?format=auto&width=1920&quality=75" alt="Southwind Aerial View">
+            </div>
         </div>
     </section>
 
-    <section class="video-section">
-        <div class="video-container">
-            <video controls poster="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Banyan%20House%20Model)-1.jpg">
-                <source src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/FA-CM-2025-02265%20Southwind%20AVP%20Vid%20(1).mp4" type="video/mp4">
-            </video>
+    <section class="features-section">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--primary-brown);">Why Invest in Southwind?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h4>Cooler Micro-Climate</h4>
+                <p>Situated at one of the highest points in San Pedro, offering fresher air and cooler temperatures than the city.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Prime Accessibility</h4>
+                <p>Only minutes away from SLEX via San Pedro Exit and MCX, making Alabang and Makati easily reachable.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Nature-Inspired</h4>
+                <p>Designed with a Modern Asian aesthetic that blends seamlessly with the rolling terrain and lush greens.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Filinvest Legacy</h4>
+                <p>A master-planned community by one of the country's most trusted developers, ensuring long-term value.</p>
+            </div>
         </div>
     </section>
 
     <section class="models-section">
-        <h2>Property Offerings</h2>
+        <h2 style="font-family: 'Playfair Display'; margin-bottom: 40px;">Our Collections</h2>
         <div class="models-grid">
+            
             <div class="model-card">
                 <img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Banyan%20House%20Model)-1.jpg?format=auto&width=828&quality=75" class="model-image">
                 <div class="model-info">
+                    <span class="house-type">Single Detached</span>
                     <h3>Banyan</h3>
-                    <span class="house-type">2-Storey Single Detached</span>
                     <ul class="specs-list">
-                        <li>Floor Area: <span>167 sqm</span></li>
-                        <li>Bedrooms: <span>3</span></li>
+                        <li>Floor Area <span>167 sqm</span></li>
+                        <li>Bedrooms <span>3</span></li>
+                        <li>Toilet & Bath <span>2</span></li>
                     </ul>
+                    <div style="font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--primary-brown);">Floor Plans</div>
                     <div class="floor-plans">
                         <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(GF%20Plan)%20(1).jpg"></div>
                         <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(2F%20Plan)%20(1).jpg"></div>
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(RD%20Plan)%20(1).jpg"></div>
                     </div>
                 </div>
             </div>
@@ -157,42 +157,46 @@
             <div class="model-card">
                 <img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02691%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Walnut%20KV)%20(1)-1.jpg?format=auto&width=828&quality=75" class="model-image">
                 <div class="model-info">
+                    <span class="house-type">Single Attached</span>
                     <h3>Walnut</h3>
-                    <span class="house-type">Single Attached Bungalow</span>
                     <ul class="specs-list">
-                        <li>Floor Area: <span>130 sqm</span></li>
-                        <li>Bedrooms: <span>3</span></li>
+                        <li>Floor Area <span>130 sqm</span></li>
+                        <li>Bedrooms <span>3</span></li>
+                        <li>Toilet & Bath <span>1</span></li>
                     </ul>
+                    <div style="font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--primary-brown);">Floor Plans</div>
                     <div class="floor-plans">
                         <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02691%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Walnut%20GF%20Plan)%20(1).jpg"></div>
                         <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/Roof%20Deck%20(1).jpg"></div>
                     </div>
                 </div>
             </div>
+
+            <div class="model-card">
+                <img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02701%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Residential%20Lot)-1.jpg?format=auto&width=828&quality=75" class="model-image">
+                <div class="model-info">
+                    <span class="house-type">Residential Lot</span>
+                    <h3>Lot Only</h3>
+                    <ul class="specs-list">
+                        <li>Lot Size <span>168 sqm</span></li>
+                        <li>View <span>Mountain / Lake View</span></li>
+                        <li>Status <span>Ready for House Construction</span></li>
+                    </ul>
+                    <p style="font-size: 0.85rem; color: var(--gray);">Build your dream home on our prime cut lots with flexible design options.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="models-section" style="background-color: var(--white); border-top: 1px solid #eee;">
-        <h2>The Neighborhood</h2>
-        <div class="models-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); text-align: left;">
-            <div style="padding: 10px;">
-                <h4 style="color: var(--accent-gold); text-transform: uppercase;">CBD & Retail</h4>
-                <ul class="specs-list">
-                    <li>Southwoods City <span>10 mins</span></li>
-                    <li>Festival Mall <span>15 mins</span></li>
-                </ul>
-            </div>
-            <div style="padding: 10px;">
-                <h4 style="color: var(--accent-gold); text-transform: uppercase;">Medical</h4>
-                <ul class="specs-list">
-                    <li>Unihealth Southwoods <span>10 mins</span></li>
-                    <li>Asian Hospital <span>20 mins</span></li>
-                </ul>
-            </div>
-        </div>
-        <div style="width: 100%; margin-top: 50px; border: 1px solid #ddd;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.814324156641!2d121.0371661!3d14.3727778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d7406c17ed53%3A0xc6f3093e525bde18!2sSouthwind%20by%20Filinvest%20Land!5e0!3m2!1sen!2sph!4v1700000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+    <section class="video-section">
+        <video controls>
+            <source src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/FA-CM-2025-02265%20Southwind%20AVP%20Vid%20(1).mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section style="padding: 0; line-height: 0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.832961556054!2d121.03661271141312!3d14.379124982260682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d7406c174d53%3A0xc6f3093e525bde18!2sSouthwind%20by%20Filinvest!5e0!3m2!1sen!2sph!4v1700000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <section id="contact" class="contact-section">
@@ -204,15 +208,13 @@
                     <input type="text" name="Name" placeholder="Full Name" required>
                     <input type="email" name="_replyto" placeholder="Email Address" required>
                     <input type="tel" name="Phone" placeholder="Mobile Number" required>
-                    <textarea name="Inquiry" rows="4" placeholder="Preferred Unit or Message"></textarea>
-                    <button type="submit" class="btn-submit">Inquire Now</button>
+                    <textarea name="Inquiry" rows="4" placeholder="I'm interested in Banyan / Walnut / Lot Only"></textarea>
+                    <button type="submit" class="btn-submit">SUBMIT INQUIRY</button>
                 </form>
             </div>
-
             <div id="success-message">
                 <h3>Thank You!</h3>
-                <p>Your inquiry for Southwind has been received. Our property specialist will contact you shortly.</p>
-                <button onclick="window.location.href='#'" class="btn-submit" style="padding: 10px 20px;">Back to Top</button>
+                <p>We have received your message. A Southwind specialist will get in touch with you shortly.</p>
             </div>
         </div>
     </section>
@@ -227,8 +229,6 @@
             document.getElementById('lightbox-img').src = imgSrc;
             document.getElementById('lightbox').style.display = 'flex';
         }
-
-        // Logic to show success message if URL has #thanks
         window.onload = function() {
             if(window.location.hash === "#thanks") {
                 document.getElementById('form-wrapper').style.display = 'none';
