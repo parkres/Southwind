@@ -53,8 +53,15 @@
         .video-container { max-width: 1000px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2); line-height: 0; }
         video { width: 100%; height: auto; }
 
+        /* --- WHY INVEST SECTION --- */
+        .invest-section { padding: 80px 20px; background: var(--white); text-align: center; }
+        .invest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto; }
+        .invest-item { padding: 20px; }
+        .invest-item h4 { color: var(--primary-brown); text-transform: uppercase; margin-bottom: 10px; font-size: 1rem; border-bottom: 2px solid var(--light-earth); display: inline-block; padding-bottom: 5px; }
+        .invest-item p { font-size: 0.9rem; color: var(--gray); }
+
         /* --- PROXIMITY SECTION --- */
-        .proximity-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .proximity-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
         .proximity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
         .proximity-card { background: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border-top: 4px solid var(--accent-gold); }
         .proximity-card h4 { color: var(--primary-brown); margin-bottom: 15px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
@@ -102,7 +109,7 @@
         <div class="hero-container">
             <div class="hero-text">
                 <h1>Elevated Living at Southwind</h1>
-                <p>Discover a master-planned community in San Pedro, Laguna, where modern Asian design meets a refreshing hilltop breeze.</p>
+                <p>Experience a master-planned community in San Pedro, Laguna, where modern Asian design meets a refreshing hilltop breeze.</p>
                 <a href="#contact" style="background: var(--primary-brown); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block;">BOOK A SITE TOUR</a>
             </div>
             <div class="hero-image">
@@ -145,31 +152,29 @@
 
     <section class="proximity-section">
         <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--primary-brown);">Prime Connectivity</h2>
-        <p>Everything you need is within reach. Strategically located near major road networks.</p>
-        
         <div class="proximity-grid">
             <div class="proximity-card">
                 <h4>Schools</h4>
                 <ul class="proximity-list">
-                    <li>PUP San Pedro <span>4.6 km</span></li>
-                    <li>FEU Alabang <span>7.9 km</span></li>
-                    <li>San Beda Alabang <span>11.5 km</span></li>
+                    <li>PUP San Pedro <span>5 mins</span></li>
+                    <li>Angelium College <span>10 mins</span></li>
+                    <li>San Beda Alabang <span>20 mins</span></li>
                 </ul>
             </div>
             <div class="proximity-card">
                 <h4>Hospitals</h4>
                 <ul class="proximity-list">
-                    <li>Unihealth Southwoods <span>8.7 km</span></li>
-                    <li>Westlake Medical <span>6.1 km</span></li>
-                    <li>Asian Hospital <span>9.1 km</span></li>
+                    <li>Unihealth Southwoods <span>10 mins</span></li>
+                    <li>Westlake Medical <span>15 mins</span></li>
+                    <li>Asian Hospital <span>20 mins</span></li>
                 </ul>
             </div>
             <div class="proximity-card">
                 <h4>Malls & CBD</h4>
                 <ul class="proximity-list">
-                    <li>Southwoods Mall <span>8.4 km</span></li>
-                    <li>Festival Mall Alabang <span>8.3 km</span></li>
-                    <li>Evia Lifestyle Center <span>7 km</span></li>
+                    <li>Southwoods Mall <span>10 mins</span></li>
+                    <li>Festival Mall Alabang <span>15 mins</span></li>
+                    <li>Evia Lifestyle Center <span>12 mins</span></li>
                 </ul>
             </div>
         </div>
@@ -203,7 +208,7 @@
                     <span style="color: var(--accent-gold); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">Single Attached</span>
                     <h3>Walnut</h3>
                     <ul class="specs-list">
-                        <li>Floor Area <span>125 sqm</span></li>
+                        <li>Floor Area <span>130 sqm</span></li>
                         <li>Bedrooms <span>3</span></li>
                         <li>Toilet & Bath <span>1</span></li>
                     </ul>
