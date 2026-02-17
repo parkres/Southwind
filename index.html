@@ -31,10 +31,10 @@
         /* HERO */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200'); 
+                        url('https://drive.google.com/thumbnail?id=1uCZLWAlEdWQ79ryVqfQQ_qXSIpv7FbEZ&sz=w1200'); 
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,6 +51,20 @@
             text-transform: uppercase;
         }
 
+        /* VIDEO SECTION */
+        .video-section {
+            background-color: #000;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 4px solid var(--accent-gold);
+            line-height: 0;
+        }
+        video { width: 100%; height: auto; }
+
         .btn-primary {
             background-color: var(--accent-gold);
             color: var(--white);
@@ -62,7 +76,7 @@
             text-transform: uppercase;
         }
 
-        /* MODEL UNITS SECTION */
+        /* MODELS SECTION */
         .models-section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -79,7 +93,7 @@
 
         .models-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -94,129 +108,125 @@
             flex-direction: column;
         }
 
-        .model-card:hover { transform: translateY(-10px); }
-
         .model-image {
             width: 100%;
             height: 250px;
-            background-color: #e0dcd0;
             object-fit: cover;
-            display: block;
         }
 
-        .model-info {
-            padding: 25px;
-            flex-grow: 1;
-        }
-
-        .model-info h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-brown);
-            font-size: 1.8rem;
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-
+        .model-info { padding: 25px; flex-grow: 1; }
+        
         .house-type {
             font-weight: 600;
             color: var(--accent-gold);
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 1px;
             display: block;
             margin-bottom: 15px;
         }
 
-        .specs-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* FLOOR PLAN STYLING & ZOOM */
+        .floor-plan-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: var(--primary-brown);
+        }
+        .floor-plans {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .floor-plans div {
+            flex: 1;
+            border: 1px solid #eee;
+            cursor: zoom-in;
+            overflow: hidden;
+            background: #fff;
+            transition: 0.3s;
+        }
+        .floor-plans div:hover {
+            border-color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+        .floor-plans img {
+            width: 100%;
+            height: 60px;
+            object-fit: contain;
+            display: block;
         }
 
+        /* LIGHTBOX OVERLAY */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border: 5px solid white;
+        }
+        #lightbox .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .specs-list { list-style: none; padding: 0; margin: 0; }
         .specs-list li {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-            color: var(--gray);
-        }
-
-        .specs-list li span {
-            font-weight: 600;
-            color: var(--dark-text);
-        }
-
-        .lot-only-card {
-            background-color: var(--primary-brown);
-            color: var(--white);
-        }
-
-        .lot-only-card h3, .lot-only-card .house-type {
-            color: var(--white);
-        }
-        
-        .lot-only-card .specs-list li {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.8);
-        }
-
-        .lot-only-card .specs-list li span {
-            color: var(--white);
+            font-size: 0.9rem;
         }
 
         /* CONTACT SECTION */
-        .contact-section { 
-            background-color: var(--white); 
-            padding: 100px 20px; 
-            text-align: center; 
-        }
+        .contact-section { background-color: var(--white); padding: 80px 20px; text-align: center; }
+        .contact-container { max-width: 500px; margin: 0 auto; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; font-family: 'Montserrat'; }
+        .btn-submit { background-color: var(--primary-brown); color: var(--white); padding: 18px; border: none; font-weight: 600; cursor: pointer; text-transform: uppercase; }
 
-        .contact-container { 
-            max-width: 500px; 
-            margin: 0 auto; 
-        }
-
-        .contact-form { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px; 
-            margin-top: 30px; 
-        }
-
-        .contact-form input, 
-        .contact-form textarea { 
-            padding: 15px; 
-            border: 1px solid #ddd; 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-        }
-
-        .btn-submit { 
-            background-color: var(--primary-brown); 
-            color: var(--white); 
-            padding: 18px; 
-            border: none; 
-            font-weight: 600; 
-            cursor: pointer; 
-            text-transform: uppercase; 
-            transition: 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: #3e2723;
-        }
-
-        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #999; text-transform: uppercase; }
+        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #999; }
     </style>
 </head>
 <body>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Southwind</h1>
             <p>Modern Asian Living in San Pedro, Laguna</p>
             <a href="#contact" class="btn-primary">Schedule a Viewing</a>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <video controls poster="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Banyan%20House%20Model)-1.jpg">
+                <source src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/FA-CM-2025-02265%20Southwind%20AVP%20Vid%20(1).mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
@@ -230,12 +240,17 @@
                     <h3>Banyan</h3>
                     <span class="house-type">2-Storey Single Detached</span>
                     <ul class="specs-list">
-                        <li>Usable Floor Area: <span>167 sqm</span></li>
-                        <li>Lot Area: <span>132 sqm</span></li>
+                        <li>Floor Area: <span>167 sqm</span></li>
                         <li>Bedrooms: <span>3</span></li>
                         <li>Bathrooms: <span>2</span></li>
-                        <li>Special Feature: <span>View Deck</span></li>
                     </ul>
+                    
+                    <div class="floor-plan-label">View Floor Plans (Click to Zoom)</div>
+                    <div class="floor-plans">
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(GF%20Plan)%20(1).jpg" alt="Ground Floor"></div>
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(2F%20Plan)%20(1).jpg" alt="Second Floor"></div>
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02690%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(RD%20Plan)%20(1).jpg" alt="Roof Deck"></div>
+                    </div>
                 </div>
             </div>
 
@@ -245,25 +260,27 @@
                     <h3>Walnut</h3>
                     <span class="house-type">Single Attached Bungalow</span>
                     <ul class="specs-list">
-                        <li>Usable Floor Area: <span>125 sqm</span></li>
-                        <li>Lot Area: <span>132 sqm</span></li>
+                        <li>Floor Area: <span>130 sqm</span></li>
                         <li>Bedrooms: <span>3</span></li>
                         <li>Bathrooms: <span>1</span></li>
-                        <li>Special Feature: <span>View Deck</span></li>
                     </ul>
+
+                    <div class="floor-plan-label">View Floor Plans (Click to Zoom)</div>
+                    <div class="floor-plans">
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02691%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Walnut%20GF%20Plan)%20(1).jpg" alt="Ground Floor"></div>
+                        <div onclick="openLightbox(this)"><img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/Roof%20Deck%20(1).jpg" alt="Roof Deck"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="model-card lot-only-card">
-                <div class="model-image" style="background: url('https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02701%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Residential%20Lot)-1.jpg?format=auto&width=828&quality=75') center/cover;"></div>
+            <div class="model-card" style="background: var(--primary-brown); color: white;">
+                <img src="https://filinvest-bbdcgrc0ehbqeuar.z02.azurefd.net/CM-2025-02701%20-%20Southwind%20Image%20Enhancement%20with%20Optimization%20(Residential%20Lot)-1.jpg?format=auto&width=828&quality=75" alt="Residential Lot" class="model-image">
                 <div class="model-info">
                     <h3>Lot Only</h3>
-                    <span class="house-type">Residential Investment</span>
-                    <p>Build your custom sanctuary on our prime lots.</p>
+                    <span class="house-type" style="color: white;">Residential Investment</span>
                     <ul class="specs-list">
-                        <li>Available Sizes: <span>168 sqm</span></li>
-                        <li>Phase: <span>1 Available</span></li>
-                        <li>View: <span>Mountain / Lake View</span></li>
+                        <li style="border-color: rgba(255,255,255,0.1);">Sizes: <span style="color: white;">157 - 555 sqm</span></li>
+                        <li style="border-color: rgba(255,255,255,0.1);">View: <span style="color: white;">Mountain / Lake View</span></li>
                     </ul>
                 </div>
             </div>
@@ -274,16 +291,11 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <h2>Direct Inquiry</h2>
-            <p>Fill out the form below and I will get back to you shortly.</p>
-            
             <form action="https://formspree.io/f/mqedbnnp" method="POST" class="contact-form">
                 <input type="text" name="Name" placeholder="Full Name" required>
                 <input type="email" name="_replyto" placeholder="Email Address" required>
                 <input type="tel" name="Phone" placeholder="Mobile Number" required>
-                <textarea name="Inquiry" rows="4" placeholder="Which model are you interested in? (Banyan, Walnut, or Lot Only)"></textarea>
-                
-                <input type="text" name="_gotcha" style="display:none">
-                
+                <textarea name="Inquiry" rows="4" placeholder="Which model are you interested in?"></textarea>
                 <button type="submit" class="btn-submit">Inquire Now</button>
             </form>
         </div>
@@ -292,6 +304,14 @@
     <footer>
         <p>&copy; 2026 Southwind | parkres | Filinvest Land Inc.</p>
     </footer>
+
+    <script>
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
 
 </body>
 </html>
